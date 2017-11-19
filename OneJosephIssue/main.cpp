@@ -118,11 +118,6 @@ int main() {
         map = circularList.remove(map, index);
         cout << index << endl;
     }
-
-    getchar();
-    getchar();
-    getchar();
-    getchar();
-
+    
     return 0;
 }
