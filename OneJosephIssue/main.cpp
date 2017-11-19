@@ -14,6 +14,7 @@ public:
     CircularList();
     void insert(int password);
     void show();
+    void remove(int map);
 };
 
 CircularList::CircularList() {
@@ -43,6 +44,19 @@ void CircularList::show() {
         cout << p->password;
     }
     cout << p->password;
+}
+
+void CircularList::remove(int map) {
+    Node *p = headPointer;
+    for (int i = 0; i < map - 1; i ++) {
+        p = p->next;
+    }
+    Node *q = p->next;
+    p->next = q->next;
+    if (q == q->next) {
+        headPointer->next = NULL;
+    }
+    free(q);
 }
 
 int main() {
