@@ -103,14 +103,14 @@ int main() {
     cin  >> num;
     int *password = new int[num];
 
-    for (i = 0; i < num; i ++) {
-        cout << "the " << i + 1 << " password:";
-        cin  >> password[i];
-    }
-
     // for (i = 0; i < num; i ++) {
-    //     password[i] = (rand() % 30) + 1;
+    //     cout << "the " << i + 1 << " password:";
+    //     cin  >> password[i];
     // }
+
+    for (i = 0; i < num; i ++) {
+        password[i] = (rand() % 30) + 1;
+    }
 
     for (i = num - 1; i >= 0; i --) {
         circularList.insert(i + 1, password[i]);
