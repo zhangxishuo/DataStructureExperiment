@@ -53,9 +53,13 @@ int CircularList::remove(int map, int &num) {
     Node *p = headPointer->next;
     Node *q;
     int password;
+    if (null()) {
+        return -1;
+    }
     if (map == 1) {
         if (p->next == p) {
             headPointer->next = NULL;
+            free(p);
         } else {
             for (; p->next != headPointer->next; p = p->next);
             q = headPointer->next;
@@ -95,14 +99,18 @@ int main() {
     CircularList circularList;
 
     int num, i;
-    cout << "Numbers:" << endl;
+    cout << "Numbers:";
     cin  >> num;
     int *password = new int[num];
 
     for (i = 0; i < num; i ++) {
-        cout << "the " << i + 1 << " password" << endl;
+        cout << "the " << i + 1 << " password:";
         cin  >> password[i];
     }
+
+    // for (i = 0; i < num; i ++) {
+    //     password[i] = (rand() % 30) + 1;
+    // }
 
     for (i = num - 1; i >= 0; i --) {
         circularList.insert(i + 1, password[i]);
@@ -111,13 +119,16 @@ int main() {
     circularList.show();
 
     int map, index;
-    cout << "the start map" << endl;
+    cout << "the start map:";
     cin  >> map;
 
     while (!circularList.null()) {
         map = circularList.remove(map, index);
         cout << index << endl;
     }
-    
+
+    getchar();
+    getchar();
+
     return 0;
 }
