@@ -1,4 +1,4 @@
-# DataStructureExperiment
+# data-structure
 数据结构实验
 
 # 实验一 Joseph问题求解算法的设计与实现
