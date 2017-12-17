@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zhangxishuo/桌面/data-structure/3-huffmen-encode/main.cpp
+iostream
+-
+string
+-
+algorithm
+-
+fcntl.h
+-
+fstream
+-
+
