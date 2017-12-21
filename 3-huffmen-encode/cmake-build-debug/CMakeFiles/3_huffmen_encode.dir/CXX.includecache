@@ -9,11 +9,9 @@
 /home/zhangxishuo/桌面/data-structure/3-huffmen-encode/main.cpp
 iostream
 -
-string
+cstring
 -
 algorithm
--
-fcntl.h
 -
 fstream
 -

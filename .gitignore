@@ -349,3 +349,6 @@ ASALocalRun/
 *.exe
 *.out
 *.app
+
+*.txt
+*/cmake-build-debug/
