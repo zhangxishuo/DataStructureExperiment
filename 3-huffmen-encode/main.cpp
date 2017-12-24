@@ -34,6 +34,7 @@ public:
     void WordToCode();
     void CodeToWord();
     void PrintTree();
+    void RemoveOtherNode(char **tree, int row, int index, int depth, bool isParent);
     string GetCode();
     vector<string> Split(string str, string sep);
 };
@@ -101,7 +102,7 @@ void Huffmen::Generate() {
 
 void Huffmen::Encode() {
     ofstream outfile;
-    outfile.open("codeFile.txt");
+    outfile.open("code.txt", ios_base::out);
     string *strArr = new string[size];
     int i;
     for (i = 0; i < size; i ++) {
@@ -147,11 +148,8 @@ void Huffmen::WordToCode() {
     int i, j;
     string code = this->GetCode();
     string data;
-    ifstream infile;
-    infile.open("toBeTran.txt");
-    infile >> data;
-    cout << data << endl;
-    infile.close();
+    cout << "Please Input data:" << endl;
+    cin >> data;
 
     vector<string> codes = this->Split(code, " ");
 
@@ -208,14 +206,15 @@ void Huffmen::CodeToWord() {
     }
 
     for (i = 0; data[i] != '\0'; i ++) {
-        int *temp = new int[enCode->length() + 1];
-        for (j = 0; j <= enCode->length(); j ++) {
+        int *temp = new int[enCode->size() + 1];
+        int tempSize = enCode->size() + 1;
+        for (j = 0; j <= tempSize; j ++) {
             temp[j] = (int)data.find(enCode[j]);
         }
         int min = INIT;
         int min_site = 0;
         int state = 0;
-        for (j = 0; j <= enCode->length(); j ++) {
+        for (j = 0; j <= tempSize; j ++) {
             if (temp[j] <= min && temp[j] != -1) {
                 min = temp[j];
                 min_site = j;
@@ -266,6 +265,7 @@ void Huffmen::Print() {
             outfile << endl;
         }
     }
+    cout << endl;
 
     outfile.close();
 }
@@ -303,10 +303,11 @@ int Huffmen::GetDepth() {
 }
 
 void Huffmen::PrintTree() {
+    /* 获取深度, 建立二维数组 */
     int i, j;
     int depth   = this->GetDepth();
-    int row     = depth * 4 - 3;
-    int col     = (int)pow(2, depth) - 1;
+    int row     = depth;
+    int col     = (int)pow(2, depth - 1) * 4;
     char **tree = new char*[row];
     for (i = 0; i < row; i ++) {
         tree[i] = new char[col];
@@ -317,6 +318,7 @@ void Huffmen::PrintTree() {
         }
     }
 
+    /* 获取编码 */
     string code = this->GetCode();
     vector<string> codes = this->Split(code, " ");
 
@@ -331,15 +333,59 @@ void Huffmen::PrintTree() {
         }
     }
 
-    for (i = 0; i < size; i ++) {
-        cout << value[i] << " " << enCode[i] << endl;
+    /* 将满二叉树插入数组中 */
+    for (i = 0; i < depth; i ++) {
+        int *temp = new int[(int)pow(2, i)];
+        for (j = 0; j < pow(2, i); j ++) {
+            temp[j] = col * (j + 1) / ((int)pow(2, i) + 1);
+            tree[i][temp[j]] = '+';
+        }
     }
 
+    /* 字符替换 */
+    for (i = 0; i < size; i ++) {
+        int index  = 0;
+        int length = (int)enCode[i].length();
+        for (j = 1; j <= length; j ++) {
+            if (enCode[i][j - 1] == '0') {
+                index = 2 * index + 0;
+            } else {
+                index = 2 * index + 1;
+            }
+        }
+        int position = col * (index + 1) / ((int)pow(2, length) + 1);
+        tree[length][position] = value[i];
+        if (length < depth - 1) {
+            this->RemoveOtherNode(tree, length, index, depth, true);
+        }
+    }
+
+    ofstream outfile;
+    outfile.open("treePrint.txt");
+
+    /* 输出数组 */
     for (i = 0; i < row; i ++) {
         for (j = 0; j < col; j ++) {
             cout << tree[i][j];
+            outfile << tree[i][j];
         }
         cout << endl;
+        outfile << endl;
+    }
+
+    outfile.close();
+}
+
+void Huffmen::RemoveOtherNode(char **tree, int row, int index, int depth, bool isParent) {
+
+    if (row != depth) {
+        int col             = (int)pow(2, depth - 1) * 4;
+        int position        = col * (index + 1) / ((int)pow(2, row) + 1);
+        if (!isParent) {
+            tree[row][position] = ' ';
+        }
+        this->RemoveOtherNode(tree, row + 1, index * 2, depth, false);
+        this->RemoveOtherNode(tree, row + 1, index * 2 + 1, depth, false);
     }
 }
 
