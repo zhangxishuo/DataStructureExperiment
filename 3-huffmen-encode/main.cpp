@@ -151,6 +151,8 @@ void Huffmen::WordToCode() {
     cout << "Please Input data:" << endl;
     cin >> data;
 
+    getchar();
+
     vector<string> codes = this->Split(code, " ");
 
     size = (int)codes.size() / 2;
