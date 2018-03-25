@@ -1,3 +1,0 @@
-/home/zhangxishuo/桌面/data-structure/3-huffmen-encode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zhangxishuo/桌面/data-structure/3-huffmen-encode/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zhangxishuo/桌面/data-structure/3-huffmen-encode/cmake-build-debug/CMakeFiles/3_huffmen_encode.dir
