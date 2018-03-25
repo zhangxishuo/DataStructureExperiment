@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/idea/index",
+        "pages/market/index",
+        "pages/inform/index",
+        "pages/me/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "小程序",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/idea/index",
+                "text": "想法"
+            },
+            {
+                "pagePath": "pages/market/index",
+                "text": "市场"
+            },
+            {
+                "pagePath": "pages/inform/index",
+                "text": "通知"
+            },
+            {
+                "pagePath": "pages/me/index",
+                "text": "我的"
+            }
+        ]
+    }
+}
