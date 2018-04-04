@@ -1,0 +1,7 @@
+<view class='container'>
+    <image class='user-avatar' src='https://hexo.io/logo.svg'></image>
+    <text class='user-name'>Hello, Koifish!</text>
+    <view class='motto-container'>
+        <navigator url='../index/index' class='motto'>开启小程序之旅</navigator>
+    </view>
+</view>
