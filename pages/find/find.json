@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "热映",
+    "navigationBarTitleText": "找片",
     "usingComponents": {
         "search-bar": "../../components/searchBar/searchBar"
     }

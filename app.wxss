@@ -1,5 +1,1 @@
 @import 'style/weui.wxss';
-
-text {
-    font-family: Microsoft Yahei;
-}
