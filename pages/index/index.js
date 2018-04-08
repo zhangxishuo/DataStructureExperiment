@@ -1,18 +1,32 @@
-// pages/index/index.js
+var requestService = require('../../service/requestService.js');
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        tabs: ["正在热映", "即将上映"],
+        activeIndex: 0,
+        wellReceivedMovies: [],
+        commingSoonMovies: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var self = this;
+        requestService.getWellReceivedMovies('天津', function(data) {
+            self.setData({
+                wellReceivedMovies: data.subjects
+            });
+        });
+        requestService.getComingSoonMovies(function(data) {
+            self.setData({
+                commingSoonMovies: data.subjects
+            });
+        });
     },
 
     /**
@@ -62,5 +76,12 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    tabClick: function (e) {
+        this.setData({
+            sliderOffset: e.currentTarget.offsetLeft,
+            activeIndex: e.currentTarget.id
+        });
     }
 })
