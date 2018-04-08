@@ -2,7 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/find/find",
-        "pages/account/account",
+        "pages/about/about",
         "pages/search/search"
     ],
     "window": {
@@ -30,10 +30,10 @@
                 "selectedColor": "#2BA245"
             },
             {
-                "pagePath": "pages/account/account",
-                "text": "我的",
-                "iconPath": "icons/account.png",
-                "selectedIconPath": "icons/account_selected.png",
+                "pagePath": "pages/about/about",
+                "text": "关于",
+                "iconPath": "icons/about.png",
+                "selectedIconPath": "icons/about_selected.png",
                 "selectedColor": "#2BA245"
             }
         ]

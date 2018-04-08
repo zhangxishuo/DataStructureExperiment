@@ -4,7 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        param: ''
     },
 
     /**
@@ -69,6 +69,19 @@ Page({
     navigateBack: function() {
         wx.navigateBack({
             delta: 1
+        });
+    },
+
+    clear: function() {
+        var self = this;
+        self.setData({
+            param: ''
+        });
+    },
+
+    inputTyping: function (e) {
+        this.setData({
+            param: e.detail.value
         });
     }
 })
