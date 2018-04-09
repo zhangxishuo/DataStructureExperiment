@@ -1,0 +1,13 @@
+{
+  "description": "小程序实战-豆瓣电影",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "wx4136129c7525556c",
+  "projectname": "douban-movie",
+  "miniprogramRoot": "./dist"
+}
