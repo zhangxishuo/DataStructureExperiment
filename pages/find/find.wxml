@@ -1,1 +1,0 @@
-<search-bar></search-bar>

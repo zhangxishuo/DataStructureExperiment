@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "热映",
-    "usingComponents": {
-        "search-bar": "../../components/searchBar/searchBar",
-        "movie-list": "../../components/movieList/movieList"
-    }
-}
