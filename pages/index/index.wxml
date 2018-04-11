@@ -1,2 +1,5 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<import src="/zanui/tab/index.wxml" />
+
+<view class="container">
+    <template is="zan-tab" data="{{ ...tabs, componentId: 'tabs' }}"></template>
+</view>
