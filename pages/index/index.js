@@ -11,7 +11,8 @@ Page(extend({}, Tab, {
                 title: '即将上映'
             }],
             selectedId: 'inFilm'
-        }
+        },
+        movieList: []
     },
 
     handleZanTabChange(e) {
