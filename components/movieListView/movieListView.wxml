@@ -14,7 +14,7 @@
         <view class="zan-card__detail-row zan-c-gray-darker">
             <view class="zan-card__right-col description zan-c-red">{{ number.format(item.collect_count) }}人看过</view>
             <view class="zan-card__left-col description">
-                ★★★★★{{ item.rating.average }}
+                <star stars="{{ item.rating.stars }}" score="{{ item.rating.average }}"></star>
             </view>
         </view>
         <view class="zan-card__detail-row zan-c-gray-darker">

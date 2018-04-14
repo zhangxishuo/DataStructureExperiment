@@ -1,0 +1,3 @@
+<block wx:for="{{ blackStars }}" wx:key="unique">★</block>
+<block wx:for="{{ whiteStars }}" wx:key="unique">☆</block>
+{{ grade }}
