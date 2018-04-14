@@ -1,0 +1,11 @@
+var self = {};
+
+self.format = function (number) {
+    if (number > 10000) {
+        return Math.floor(number / 1000) / 10 + '万';
+    } else {
+        return number;
+    }
+};
+
+module.exports.format = self.format;

@@ -1,0 +1,31 @@
+<wxs module="array" src="../../filter/array.wxs"></wxs>
+<wxs module="number" src="../../filter/number.wxs"></wxs>
+
+<navigator class="zan-card" wx:for="{{ movies }}" wx:key="unique">
+    <view class="zan-card__thumb image-container">
+        <image class="zan-card__img" src="{{ item.images.small }}" mode="aspectFit"></image>
+    </view>
+    <view class="zan-card__detail">
+        <view class="zan-card__detail-row">
+            <view class="zan-ellipsis--l2 title">
+                {{ item.title }}
+            </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+            <view class="zan-card__right-col description zan-c-red">{{ number.format(item.collect_count) }}人看过</view>
+            <view class="zan-card__left-col description">
+                ★★★★★{{ item.rating.average }}
+            </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+            <view class="description">
+                导演:{{ array.getNameInArray(item.directors, '/') }}
+            </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+            <view class="description">
+                主演:{{ array.getNameInArray(item.casts, '/') }}
+            </view>
+        </view>
+    </view>
+</navigator>

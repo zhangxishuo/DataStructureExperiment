@@ -1,1 +1,5 @@
-{}
+{
+    "usingComponents": {
+        "movie-list-view": "/components/movieListView/movieListView"
+    }
+}

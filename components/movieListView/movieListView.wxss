@@ -1,0 +1,14 @@
+@import '/zanui/index.wxss';
+
+.title {
+    font-size: 35rpx;
+}
+
+.description {
+    font-size: 25rpx;
+}
+
+.image-container{
+    width:240rpx;
+    height:240rpx;
+}
