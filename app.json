@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/search/search",
-        "pages/about/about"
+        "pages/about/about",
+        "pages/detail/detail"
     ],
     "window": {
         "navigationBarTitleText": "豆瓣电影",

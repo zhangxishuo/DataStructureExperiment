@@ -30,5 +30,10 @@ self.getInComeList = function (callback) {
     self.baseRequest('coming_soon', callback);
 };
 
+self.getFilmDetail = function(id, callback) {
+    self.baseRequest('subject/' + id, callback);
+};
+
 module.exports.getInFilmList = self.getInFilmList;
 module.exports.getInComeList = self.getInComeList;
+module.exports.getFilmDetail = self.getFilmDetail;
