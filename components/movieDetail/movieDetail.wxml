@@ -1,0 +1,100 @@
+<wxs module="array" src="../../filter/array.wxs"></wxs>
+
+<image class="movie-cover" src="{{ movie.images.large }}" mode="aspectFit"></image>
+
+<view class="view-background">
+    <view class="zan-row">
+        <view class="zan-col zan-col-20 zan-col-offset-2">
+            <view class="zan-row">
+                <view class="zan-col zan-col-18">
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 title">
+                            {{ movie.title }}
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            {{ movie.year }}/{{ array.getStrInArray(movie.genres, '/') }}
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            原名：{{ movie.original_title }}
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            上映时间：{{ movie.mainland_pubdate }}
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            片长：{{ movie.durations[0] }}
+                        </view>
+                    </view>
+                </view>
+                <view class="zan-col zan-col-6">
+                    <view class="square score">
+                        <view class="zan-c-gray">
+                            豆瓣评分
+                        </view>
+                        <view class="zan-c-black average">
+                            {{ movie.rating.average }}
+                        </view>
+                        <view class="zan-c-gray-darker">
+                            {{ movie.ratings_count }} 人
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="doc-title zan-hairline--bottom margin"></view>
+            <view class="zan-row">
+                <view class="zan-col zan-col-24 zan-c-gray-dark zan-font-12">
+                    简介
+                </view>
+            </view>
+            <view class="zan-row">
+                <view class="zan-col zan-col-24 zan-c-black summary">
+                    {{ movie.summary }}
+                </view>
+            </view>
+            <view class="doc-title zan-hairline--bottom margin"></view>
+            <view class="zan-row">
+                <view class="zan-col zan-col-24 zan-c-gray-dark zan-font-12">
+                    剧照
+                </view>
+            </view>
+            <scroll-view scroll-x class="stage-photo-container">
+                <view class="inline stage-photo-view" wx:for="{{ movie.photos }}" wx:key="unique">
+                    <image class="stage-photo" src="{{ item.image }}" mode="top"></image>
+                </view>
+            </scroll-view>
+            <view class="doc-title zan-hairline--bottom margin"></view>
+            <view class="zan-row">
+                <view class="zan-col zan-col-24 zan-c-gray-dark zan-font-12">
+                    影评
+                </view>
+            </view>
+            <view class="zan-row review-margin" wx:for="{{ movie.popular_reviews }}" wx:key="unique">
+                <view class="zan-col zan-col-24 zan-c-black">
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24">
+                            {{ item.title }}
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            {{ item.author.name }}
+                            <star star="{{ item.rating.value }}"></star>
+                        </view>
+                    </view>
+                    <view class="zan-row">
+                        <view class="zan-col zan-col-24 zan-c-gray-darker description">
+                            {{ item.summary }}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

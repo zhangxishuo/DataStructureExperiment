@@ -1,6 +1,6 @@
 {
     "component": true,
     "usingComponents": {
-        "star-grade": "/components/starGrade/starGrade"
+        "star": "/components/star/star"
     }
 }

@@ -14,17 +14,17 @@
         <view class="zan-card__detail-row zan-c-gray-darker">
             <view class="zan-card__right-col description zan-c-red">{{ number.format(item.collect_count) }}人看过</view>
             <view class="zan-card__left-col description">
-                <star stars="{{ item.rating.stars }}" score="{{ item.rating.average }}"></star>
+                <star-grade stars="{{ item.rating.stars }}" score="{{ item.rating.average }}"></star-grade>
             </view>
         </view>
         <view class="zan-card__detail-row zan-c-gray-darker">
             <view class="description">
-                导演:{{ array.getNameInArray(item.directors, '/') }}
+                导演：{{ array.getNameInArray(item.directors, '/') }}
             </view>
         </view>
         <view class="zan-card__detail-row zan-c-gray-darker">
             <view class="description">
-                主演:{{ array.getNameInArray(item.casts, '/') }}
+                主演：{{ array.getNameInArray(item.casts, '/') }}
             </view>
         </view>
     </view>

@@ -1,11 +1,24 @@
 var self = {};
 
-self.getNameInArray = function(array, split) {
-    var output = '';
-    array.forEach(function(elem, index) {
-        output = output + elem.name + split;
-    });
-    return output.substring(0, output.length - 1);
+self.getNameInArray = function (array, split) {
+    if (typeof array !== 'undefined') {
+        var output = '';
+        array.forEach(function (elem, index) {
+            output = output + elem.name + split;
+        });
+        return output.substring(0, output.length - 1);
+    }
+};
+
+self.getStrInArray = function (array, split) {
+    if (typeof array !== 'undefined') {
+        var output = '';
+        array.forEach(function (elem, index) {
+            output = output + elem + split;
+        });
+        return output.substring(0, output.length - 1);
+    }
 };
 
 module.exports.getNameInArray = self.getNameInArray;
+module.exports.getStrInArray = self.getStrInArray;
