@@ -1,6 +1,8 @@
 <import src="/zanui/tab/index.wxml" />
+<import src="/zanui/loadmore/index.wxml" />
 
 <view class="container">
     <template is="zan-tab" data="{{ ...tabs, componentId: 'tabs' }}"></template>
+    <template is="zan-loadmore" data="{{ loading: loading }}"></template>
     <movie-list-view movies="{{ movieList }}"></movie-list-view>
 </view>

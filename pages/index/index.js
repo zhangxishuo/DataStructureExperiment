@@ -13,7 +13,8 @@ Page(extend({}, Tab, {
             }],
             selectedId: 'inFilm'
         },
-        movieList: []
+        movieList: [],
+        loading: true
     },
 
     onShow: function() {
@@ -21,7 +22,8 @@ Page(extend({}, Tab, {
         self.getFilmList(self.data.tabs.selectedId, function(data) {
             console.log(data.subjects);
             self.setData({
-                movieList: data.subjects
+                movieList: data.subjects,
+                loading: false
             });
         });
     },
@@ -37,6 +39,11 @@ Page(extend({}, Tab, {
     handleZanTabChange (e) {
         var self = this;
 
+        self.setData({
+            movieList: [],
+            loading: true
+        });
+
         var componentId = e.componentId;
         var selectedId = e.selectedId;
 
@@ -46,7 +53,8 @@ Page(extend({}, Tab, {
 
         self.getFilmList(selectedId, function(data) {
             self.setData({
-                movieList: data.subjects
+                movieList: data.subjects,
+                loading: false
             });
         });
     }
