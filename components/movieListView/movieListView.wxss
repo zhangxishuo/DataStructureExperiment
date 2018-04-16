@@ -8,7 +8,11 @@
     font-size: 25rpx;
 }
 
-.image-container{
-    width:240rpx;
-    height:240rpx;
+.image-container {
+    width: 180rpx;
+    height: 270rpx;
+}
+
+.detail-container {
+    margin-top: 10rpx;
 }

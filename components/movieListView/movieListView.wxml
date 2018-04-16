@@ -5,7 +5,7 @@
     <view class="zan-card__thumb image-container">
         <image class="zan-card__img" src="{{ item.images.small }}" mode="aspectFit"></image>
     </view>
-    <view class="zan-card__detail">
+    <view class="zan-card__detail detail-container">
         <view class="zan-card__detail-row">
             <view class="zan-ellipsis--l2 title">
                 {{ item.title }}
