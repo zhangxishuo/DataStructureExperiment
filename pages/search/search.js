@@ -8,6 +8,8 @@ Page(extend({}, Field, {
      */
     data: {
         param: '',
+        loading: false,
+        empty: false,
         movieList: []
     },
 
@@ -69,11 +71,23 @@ Page(extend({}, Field, {
 
     search: function() {
         var self = this;
+        self.setData({
+            loading: true
+        });
         request.searchFilm(self.data.param, function(data) {
-            self.setData({
-                movieList: data.subjects
-            });
-            console.log(self.data.movieList);
+            if (data.subjects.length === 0) {
+                self.setData({
+                    loading: false,
+                    empty: true,
+                    movieList: []
+                });
+            } else {
+                self.setData({
+                    loading: false,
+                    empty: false,
+                    movieList: data.subjects
+                });
+            }
         });
     },
 

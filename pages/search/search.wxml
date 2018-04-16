@@ -1,4 +1,5 @@
 <import src="/zanui/field/index.wxml" />
+<import src="/zanui/loadmore/index.wxml" />
 
 <view class="google-container">
     <image class="google" src="/images/google.png"></image>
@@ -17,8 +18,10 @@
     </view>
 </view>
 
-<view class="zan-row result-container">
-    <view class="zan-col zan-col-24">
+<view class="container">
+    <template is="zan-loadmore" data="{{ loading: loading }}"></template>
+    <template is="zan-loadmore" data="{{ nodata: empty }}"></template>
+    <view wx:if="{{ !loading && !empty }}">
         <movie-list-view movies="{{ movieList }}"></movie-list-view>
     </view>
 </view>
