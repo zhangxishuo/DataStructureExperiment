@@ -1,2 +1,24 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<import src="/zanui/field/index.wxml" />
+
+<view class="google-container">
+    <image class="google" src="/images/google.png"></image>
+</view>
+
+<view class="zan-row">
+    <view class="zan-col zan-col-20 zan-col-offset-2 search-input">
+        <view class="zan-row">
+            <view class="zan-col zan-col-20">
+                <template is="zan-field" data="{{ ...config.notitle, value: textareaValue }}"></template>
+            </view>
+            <view class="zan-col zan-col-4 search-container">
+                <text class="search" bindtap="search">搜索</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="zan-row result-container">
+    <view class="zan-col zan-col-24">
+        <movie-list-view movies="{{ movieList }}"></movie-list-view>
+    </view>
+</view>

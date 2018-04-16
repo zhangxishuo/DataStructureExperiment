@@ -34,6 +34,11 @@ self.getFilmDetail = function(id, callback) {
     self.baseRequest('subject/' + id, callback);
 };
 
+self.searchFilm = function(param, callback) {
+    self.baseRequest('search?q=' + param, callback);
+};
+
 module.exports.getInFilmList = self.getInFilmList;
 module.exports.getInComeList = self.getInComeList;
 module.exports.getFilmDetail = self.getFilmDetail;
+module.exports.searchFilm = self.searchFilm;

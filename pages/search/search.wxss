@@ -1,1 +1,34 @@
-/* pages/search/search.wxss */
+page {
+    background-color: #f4f6f9;
+}
+
+.google-container {
+    display: flex;
+    margin: 270rpx 0 40rpx;
+    justify-content: center;
+}
+
+.google {
+    width: 271rpx;
+    height: 92rpx;
+}
+
+.search-input {
+    background-color: #ffffff;
+    box-shadow: 0 4rpx 8rpx 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+    text-align: center;
+    height: 96.5rpx;
+    background-color: #34a853;
+}
+
+.search {
+    line-height: 96.5rpx;
+    color: #ffffff;
+}
+
+.result-container {
+    margin-top: 40rpx;
+}

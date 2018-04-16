@@ -82,18 +82,19 @@
                             {{ item.title }}
                         </view>
                     </view>
-                    <view class="zan-row">
+                    <view class="zan-row" style="margin-top:10rpx;">
                         <view class="zan-col zan-col-24 zan-c-gray-darker description">
                             {{ item.author.name }}
                             <star star="{{ item.rating.value }}"></star>
                         </view>
                     </view>
-                    <view class="zan-row">
+                    <view class="zan-row" style="margin-top:10rpx;">
                         <view class="zan-col zan-col-24 zan-c-gray-darker description">
                             {{ item.summary }}
                         </view>
                     </view>
                 </view>
+                <view class="doc-title zan-hairline--bottom"></view>
             </view>
         </view>
     </view>
