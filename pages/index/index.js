@@ -20,7 +20,6 @@ Page(extend({}, Tab, {
     onShow: function() {
         var self = this;
         self.getFilmList(self.data.tabs.selectedId, function(data) {
-            console.log(data.subjects);
             self.setData({
                 movieList: data.subjects,
                 loading: false

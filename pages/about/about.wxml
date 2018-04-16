@@ -1,1 +1,13 @@
-<!--pages/about/about.wxml-->
+<import src="/zanui/loadmore/index.wxml" />
+
+<view class="zan-row">
+    <view class="zan-col zan-col-20 zan-col-offset-2">
+        <view class="avatar-container">
+            <image class="avatar" src="{{ avatar }}"></image>
+        </view>
+        <template is="zan-loadmore" data="{{ loading: loading }}"></template>
+        <view wx:if="{{ !loading }}" class="profile" wx:for="{{ paragraph }}" wx:key="unique">
+            {{ item }}
+        </view>
+    </view>
+</view>

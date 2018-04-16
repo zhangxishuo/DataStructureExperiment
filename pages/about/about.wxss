@@ -1,1 +1,14 @@
-/* pages/about/about.wxss */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin: 100rpx 0;
+}
+
+.avatar {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.profile {
+    font-size: 28rpx;
+}
