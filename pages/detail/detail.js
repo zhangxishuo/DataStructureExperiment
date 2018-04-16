@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        loading: true,
         movie: {}
     },
 
@@ -15,8 +16,8 @@ Page({
     onLoad: function (options) {
         var self = this;
         request.getFilmDetail(options.id, function(data) {
-            console.log(data);
             self.setData({
+                loading: false,
                 movie: data
             });
         });

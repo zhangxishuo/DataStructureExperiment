@@ -1,1 +1,8 @@
-<movie-detail movie="{{ movie }}"></movie-detail>
+<import src="/zanui/loadmore/index.wxml" />
+
+<view class="container">
+    <template is="zan-loadmore" data="{{ loading: loading }}"></template>
+    <view wx:if="{{ !loading }}">
+        <movie-detail movie="{{ movie }}"></movie-detail>
+    </view>
+</view>
