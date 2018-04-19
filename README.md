@@ -4,13 +4,13 @@
 
 ## 预览
 
-![](asset/index.jpeg)
+![](asset/index.jpeg){:height="576px" width="324px"}
 
-![](asset/search.jpeg)
+![](asset/search.jpeg){:height="576px" width="324px"}
 
-![](asset/about.jpeg)
+![](asset/about.jpeg){:height="576px" width="324px"}
 
-![](asset/detail.jpeg)
+![](asset/detail.jpeg){:height="576px" width="324px"}
 
 ## 概述
 
