@@ -1,5 +1,7 @@
 # 豆瓣电影小程序
 
+![](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 # 感谢
 
 感谢开源社区的奉献。
