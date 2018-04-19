@@ -1,8 +1,22 @@
-# 豆瓣电影小程序
+# 豆瓣电影
 
 ![](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-# 感谢
+## 预览
+
+![](asset/index.jpeg)
+
+![](asset/search.jpeg)
+
+![](asset/about.jpeg)
+
+![](asset/detail.jpeg)
+
+## 概述
+
+本小程序采用
+
+## 感谢
 
 感谢开源社区的奉献。
 
